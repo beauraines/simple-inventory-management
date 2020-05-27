@@ -22,7 +22,7 @@ class ItemController extends Controller
         $this->processRequestScopes($request, $items, Item::class, $errors);
         $this->processRequestQueryFields($request, $items, Item::class, $errors);
 
-        if (!empty($errors)) {
+        if (! empty($errors)) {
             return api()->validation('There were errors in your Request', $errors);
         }
 
