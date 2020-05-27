@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('item', 'ItemController')->only('index');
+Route::resource('uom', 'UomController')->only('index');
