@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 Route::resource('item', 'ItemController')->only('index');
 Route::resource('uom', 'UomController')->only('index');
+Route::resource('class-of-supply', 'ClassOfSupplyController')->only('index');

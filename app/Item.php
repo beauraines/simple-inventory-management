@@ -14,4 +14,9 @@ class Item extends Model
     {
         return $this->belongsTo(Uom::class);
     }
+
+    public function class_of_supply()
+    {
+        return $this->belongsTo(ClassOfSupply::class);
+    }
 }
