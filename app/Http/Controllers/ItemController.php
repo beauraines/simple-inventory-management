@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ItemRequest;
 use App\Item;
 use Illuminate\Http\Request;
 
@@ -12,11 +13,23 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ItemRequest $request)
     {
-        $items = Item::all();
+        $items = Item::query();
+        $errors = [];
 
-        return api()->ok('Items list', $items);
+        $this->processRequestWiths($request, $items, Item::class, $errors);
+        $this->processRequestScopes($request, $items, Item::class, $errors);
+        $this->processRequestQueryFields($request, $items, Item::class, $errors);
+
+        if (!empty($errors)) {
+            return api()->validation('There were errors in your Request', $errors);
+        }
+
+        // TODO improve the message when there are scopes with parameters or no withs
+        $message = 'Successfully pulled '.implode(', ', array_keys($request->get('scope') ?? [])).' items with '.$request->get('with');
+
+        return api()->response(200, $message, $items->get());
     }
 
     /**
