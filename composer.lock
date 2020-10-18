@@ -4,8 +4,71 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "184ec53288e45ab0932bd39cb0f40c41",
+    "content-hash": "6188efa3673ea18046477b2ef492b6a5",
     "packages": [
+        {
+            "name": "appstract/laravel-stock",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appstract/laravel-stock.git",
+                "reference": "1e3cd9f552764f51dc31dc095794ea25aa911027"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appstract/laravel-stock/zipball/1e3cd9f552764f51dc31dc095794ea25aa911027",
+                "reference": "1e3cd9f552764f51dc31dc095794ea25aa911027",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.6",
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Appstract\\Stock\\StockServiceProvider"
+                    ],
+                    "aliases": {
+                        "Alias": "Appstract\\Stock\\StockFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Appstract\\Stock\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gijs Jorissen",
+                    "email": "gijs@appstract.nl",
+                    "homepage": "https://appstract.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Keep stock for Eloquent models",
+            "homepage": "https://github.com/appstract/laravel-stock",
+            "keywords": [
+                "appstract",
+                "laravel-stock"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/appstract",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-04-30T12:26:13+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "1.3.0",
